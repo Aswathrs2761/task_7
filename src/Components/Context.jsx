@@ -20,7 +20,7 @@ export function SearchProvider({ children }) {
           console.log("random");
           
           // Setsearch(e.target.value)
-          const response = await axios.get(`http://www.omdbapi.com/?s=${value}&apikey=f9f5e78&type=${type}`);
+          const response = await axios.get(`https://www.omdbapi.com/?s=${value}&apikey=f9f5e78&type=${type}`);
           if (response.data.Response === "True") {
              Setfetchdata(response.data);
              navigate('/MovieList')
