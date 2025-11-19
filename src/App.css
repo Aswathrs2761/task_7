@@ -1,0 +1,125 @@
+/* GLOBAL */
+body {
+  font-family: "Inter", "Poppins", sans-serif;
+  background: rgb(41, 3, 78);
+  margin: 0;
+  padding: 0;
+}
+
+/* GRID LAYOUT */
+.movie-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 25px;
+  padding: 40px;
+  max-width: 1370px;
+  margin: auto;
+}
+
+/* MOVIE CARD */
+.movie-card {
+  background: linear-gradient(180deg, black 0%, black 100%);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.movie-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+/* POSTER */
+.movie-card img {
+  width: 100%;
+  height: 320px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 14px;
+  transition: opacity 0.3s ease;
+}
+
+.movie-card:hover img {
+  opacity: 0.95;
+}
+
+/* TITLE */
+.movie-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  margin: 0 0 6px 0;
+}
+
+/* YEAR BADGE */
+.movie-card p {
+  display: inline-block;
+  background: #eef2f7;
+  color: #4a5568;
+  padding: 5px 15px;
+  font-size: 13px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+/* Pagination Container */
+.pagination {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  display: flex;
+  gap: 10px;
+  
+  background: rgba(255, 255, 255, 0.08); /* very transparent */
+  padding: 10px 18px;
+  border-radius: 14px;
+  backdrop-filter: blur(10px); /* glass effect */
+  
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  z-index: 999;
+}
+
+/* Buttons */
+.pagination button {
+  padding: 8px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.7);
+  
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 15px;
+  
+  transition: all 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+
+/* Hover */
+.pagination button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Active Page */
+.pagination button.active-page {
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+  font-weight: 600;
+  border-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(14px);
+}
+
+/* Disabled Buttons */
+.pagination button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: none;
+}
+
+
